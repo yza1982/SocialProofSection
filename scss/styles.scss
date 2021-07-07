@@ -1,0 +1,264 @@
+@import "./vars";
+@import "./responcive";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  font-family: "Spartan", sans-serif;
+  font-size: 15px;
+  line-height: 1.3em;
+}
+
+html,
+body {
+  height: 100vh;
+}
+
+ul {
+  list-style: none;
+}
+
+p {
+  line-height: 1.8em;
+}
+
+.ml-med {
+  @include MediumScreen {
+    margin-left: 0;
+  }
+
+  margin-left: 3em;
+}
+
+.ml-lar {
+  @include MediumScreen {
+    margin-left: 0;
+  }
+
+  margin-left: 6em;
+}
+
+.mt-med {
+  @include MediumScreen {
+    margin-top: 0;
+  }
+
+  margin-top: 1.5em;
+}
+
+.mt-lar {
+  @include MediumScreen {
+    margin-top: 0;
+  }
+
+  margin-top: 2.5em;
+}
+
+.card {
+  @include MediumScreen {
+    max-width: 400px;
+    padding: 2em 3em;
+  }
+
+  @include XSmallScreen {
+    max-width: 300px;
+    padding: 1em 1.5em;
+  }
+
+  max-width: 450px;
+
+  background-color: $primary-color;
+  border-radius: 10px;
+  padding: 3em;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  gap: 1.5em;
+
+  p {
+    @include XSmallScreen {
+      font-size: 0.8em;
+    }
+    color: $secondary-forecolors;
+  }
+
+  &-header {
+    @include XSmallScreen {
+      gap: 1em;
+    }
+    display: flex;
+    align-items: center;
+    gap: 2em;
+
+    img {
+      @include XSmallScreen {
+        width: 50px;
+        height: 50px;
+      }
+      width: 65px;
+      height: 65px;
+
+      border-radius: 50px;
+    }
+  }
+}
+
+.card-title {
+  @include XSmallScreen {
+    font-size: 0.8em;
+  }
+
+  color: $secondary-forecolors;
+  font-size: 1.2em;
+  font-weight: 500;
+
+  margin-bottom: 0.3em;
+}
+
+.card-sub {
+  @include XSmallScreen {
+    font-size: 0.8em;
+  }
+
+  color: $primary-secondary-color;
+  font-size: 1.2em;
+  font-weight: 500;
+}
+
+main {
+  @include MediumScreen {
+    overflow: visible;
+    padding: 0;
+  }
+
+  @include SmallScreen {
+  }
+
+  height: 100%;
+  padding: 0 6em;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .wrapper {
+    @include MediumScreen {
+      align-items: center;
+      height: 100%;
+    }
+
+    display: flex;
+    flex-direction: column;
+    gap: 3em;
+
+    &-top {
+      @include MediumScreen {
+        flex-direction: column;
+        align-items: center;
+        gap: 3.5em;
+        padding-top: 3em;
+      }
+
+      display: flex;
+
+      &-title {
+        @include MediumScreen {
+          margin-right: 0;
+          padding: 0 2em;
+          width: 100%;
+          text-align: center;
+        }
+
+        width: 40%;
+        margin-right: auto;
+
+        h1 {
+          @include XSmallScreen {
+            font-size: 1.2em;
+          }
+
+          color: $primary-color;
+          font-size: 3rem;
+          font-weight: 700;
+          margin-bottom: 0.3em;
+        }
+
+        p {
+          @include XSmallScreen {
+            font-size: 0.8em;
+          }
+
+          color: $primary-forecolor;
+          font-weight: 400;
+        }
+      }
+
+      &-rates {
+        @include MediumScreen {
+        }
+
+        margin: 0 auto;
+        ul {
+          @include MediumScreen {
+            gap: 2.5em;
+            align-items: center;
+          }
+
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 4em;
+
+          li {
+            @include MediumScreen {
+              flex-direction: column;
+              align-items: center;
+              gap: 0.3em;
+            }
+
+            display: flex;
+            gap: 1.5em;
+
+            img {
+              @include XSmallScreen {
+                width: 10px;
+                height: 10px;
+
+                margin: 0;
+              }
+
+              display: inline;
+              margin: 0 0.3em;
+            }
+
+            h3 {
+              @include XSmallScreen {
+                font-size: 0.7em;
+              }
+
+              color: $primary-color;
+            }
+          }
+        }
+      }
+    }
+
+    &-bottom {
+      @include MediumScreen {
+        grid-template-columns: 1fr;
+        gap: 1em;
+        padding-bottom: 3em;
+      }
+
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-auto-rows: 1fr;
+      gap: 1.5em;
+    }
+  }
+}
